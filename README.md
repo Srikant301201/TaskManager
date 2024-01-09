@@ -35,9 +35,8 @@ Follow these steps to set up and run the application locally:
    **PUT query using postman:**
    ![PUT query using postman](sample_images/img_3.png) <br><br><br>
 
-   <br>
-   **SQL Table**
-   ![sql table](sample_images/img_4.png) 
+     **sql Table:**
+   ![SQL table](sample_images/img_3.png)
 
    
 
