@@ -18,6 +18,7 @@ Follow these steps to set up and run the application locally:
 3. **Run the Spring Boot Application:**
    - Open the project in your preferred IDE.
    - Build and run the Spring Boot application.
+   - Make changes in the application.properties according to your username and password.
 
 4. **Using Postman:**
    - Use Postman for making POST, PUT, and DELETE requests to interact with the application's REST endpoints.
@@ -26,13 +27,17 @@ Follow these steps to set up and run the application locally:
    Below are some images demonstrating the working of the application.
 
    **Post query using postman:**
-   ![Post query using postman](sample_images/img_1.png)<br><br>
+   ![Post query using postman](sample_images/img_1.png)<br><br><br>
 
     **Get query using browser:**
-   ![Get query using browser](sample_images/img_2.png)<br.<br>
+   ![Get query using browser](sample_images/img_2.png)<br.<br><br>
 
    **PUT query using postman:**
-   ![PUT query using postman](sample_images/img_3.png) <br><br>
+   ![PUT query using postman](sample_images/img_3.png) <br><br><br>
+
+   <br>
+   **SQL Table**
+   ![sql table](sample_images/img_4.png) 
 
    
 
