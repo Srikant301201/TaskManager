@@ -24,8 +24,7 @@ Follow these steps to set up and run the application locally:
 
 5. **Sample Images:**
    Below are some images demonstrating the working of the application.
-   <!-- Include images or screenshots of the application in action (if available) -->
+   ![Post query using postman](sample_images/img_1.png)
+   ![Get query using browser](sample_images/img_2.png)
+   ![PUT query using postman](sample_images/img_3.png)
 
----
-
-Feel free to add any additional information or sections as needed to provide a comprehensive guide for users to set up and run the Task Manager application locally.
