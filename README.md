@@ -24,7 +24,15 @@ Follow these steps to set up and run the application locally:
 
 5. **Sample Images:**
    Below are some images demonstrating the working of the application.
-   ![Post query using postman](sample_images/img_1.png)
-   ![Get query using browser](sample_images/img_2.png)
-   ![PUT query using postman](sample_images/img_3.png)
+
+   **Post query using postman:**
+   ![Post query using postman](sample_images/img_1.png)<br><br>
+
+    **Get query using browser:**
+   ![Get query using browser](sample_images/img_2.png)<br.<br>
+
+   **PUT query using postman:**
+   ![PUT query using postman](sample_images/img_3.png) <br><br>
+
+   
 
