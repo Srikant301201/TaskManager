@@ -2,12 +2,12 @@ package com.example.taskmanager.taskmanager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class TaskService {
-
     private final TaskRepository taskRepository;
 
     @Autowired
@@ -28,26 +28,15 @@ public class TaskService {
     }
 
     public Optional<Task> updateTask(Long id, Task updatedTask) {
-        Optional<Task> optionalTask = taskRepository.findById(id);
-        if (optionalTask.isPresent()) {
-            Task task = optionalTask.get();
-            task.setTitle(updatedTask.getTitle());
-            task.setDescription(updatedTask.getDescription());
-            task.setCompleted(updatedTask.isCompleted());
-            return Optional.of(taskRepository.save(task));
-        }
-        return Optional.empty();
+        return taskRepository.findById(id).map(existingTask -> {
+            existingTask.setTitle(updatedTask.getTitle());
+            existingTask.setDescription(updatedTask.getDescription());
+            existingTask.setCompleted(updatedTask.isCompleted());
+            return taskRepository.save(existingTask);
+        });
     }
 
-    public boolean deleteTask(Long id) {
-        if (taskRepository.existsById(id)) {
-            taskRepository.deleteById(id);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isValidTask(Task task) {
-        return task.getTitle() != null && !task.getTitle().isEmpty();
+    public void deleteTask(Long id) {
+        taskRepository.deleteById(id);
     }
 }

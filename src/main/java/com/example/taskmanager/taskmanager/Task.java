@@ -1,12 +1,13 @@
 package com.example.taskmanager.taskmanager;
 
 import jakarta.persistence.*;
-
-import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
 public class Task {
+
+    public Long serial;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,17 +15,22 @@ public class Task {
     private String description;
     private boolean completed;
 
-    public Task() {
-        
-    }
+    @Column(nullable = false)
+    private LocalDateTime date;
 
-    public Task(String title, String description, boolean completed) {
+    public Task() {}
+
+    public Task(Long serial, String title, String description, boolean completed) {
+        this.serial = serial;
         this.title = title;
         this.description = description;
         this.completed = completed;
     }
 
-    // Getters and setters for id, title, description, completed (omitted for brevity)
+    @PrePersist
+    protected void onCreate() {
+        this.date = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
@@ -32,6 +38,14 @@ public class Task {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getserial() {
+        return serial;
+    }
+
+    public void setserial(Long serial) {
+        this.serial = serial;
     }
 
     public String getTitle() {
@@ -56,5 +70,13 @@ public class Task {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 }
